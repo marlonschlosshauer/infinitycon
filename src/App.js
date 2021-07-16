@@ -25,7 +25,7 @@ const Infinite = ({ onBottomHit }) => {
 				onBottomHit();
 			};
 		});
-	}, []);
+	});
 	return <div ref={contentRef}></div>;
 }
 
