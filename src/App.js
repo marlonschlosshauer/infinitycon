@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid';
 
 import { useState, useEffect, useRef } from 'react';
 
-const Icon = ({ id }) => (<img onClick={() => navigator.clipboard.writeText(id)} className='identicon' alt={id} src={`data:image/png;base64,${new Identicon(id, 420).toString()}`} />);
+const Icon = ({ id }) => (<img onClick={() => navigator.clipboard.writeText(id)} className='identicon' alt={id} src={`data:image/svg+xml;base64,${new Identicon(id, { format: 'svg' }).toString()}`} />);
 
 const Generator = (size = 25) => {
 	return new Array(size).fill().map((id, index) => {
