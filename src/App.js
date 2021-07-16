@@ -13,7 +13,7 @@ const Generator = (size = 25) => {
 	});
 }
 
-const isBottom = (ref) => ref.current && ref.current.getBoundingClientRect().bottom <= (window.innerHeight * 1.7);
+const isBottom = (ref) => ref.current && ref.current.getBoundingClientRect().bottom <= (window.innerHeight * 1.3);
 
 const Infinite = ({ onBottomHit }) => {
 	const contentRef = useRef(null);
@@ -25,7 +25,7 @@ const Infinite = ({ onBottomHit }) => {
 				onBottomHit();
 			};
 		});
-	});
+	}, []);
 	return <div ref={contentRef}></div>;
 }
 
