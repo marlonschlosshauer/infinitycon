@@ -1,0 +1,10 @@
+.App {
+    display: grid;
+    justify-content: center;
+}
+
+.identicon {
+    height: 200px;
+    width: 200px;
+}
+
