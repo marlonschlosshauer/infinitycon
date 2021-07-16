@@ -4,12 +4,13 @@ import { v4 as uuid } from 'uuid';
 
 import { useState, useEffect, useRef } from 'react';
 
-const Icon = (props) => {
-	return (<img className='identicon' src={`data:image/png;base64,${new Identicon(props.id, 420).toString()}`} />)
-}
+const Icon = ({ id }) => (<img onClick={() => navigator.clipboard.writeText(id)} className='identicon' alt={id} src={`data:image/png;base64,${new Identicon(id, 420).toString()}`} />);
 
 const Generator = (size = 25) => {
-	return new Array(size).fill().map((id, index) => (<Icon id={uuid()} key={index} />));
+	return new Array(size).fill().map((id, index) => {
+		const u = uuid();
+		return <Icon id={u} key={u} />
+	});
 }
 
 const isBottom = (ref) => ref.current && ref.current.getBoundingClientRect().bottom <= (window.innerHeight * 1.7);
