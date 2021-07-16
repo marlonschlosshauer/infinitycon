@@ -7,10 +7,14 @@ function Icon(props) {
 	return (<img className='identicon' src={`data:image/png;base64,${data}`} />)
 }
 
+function Generator(size = 25) {
+	return new Array(size).fill().map((id, index) => (<Icon id={uuid()} key={index} />));
+}
+
 function App() {
 	return (
 		<div className="App">
-			<Icon id={uuid()} />
+			{Generator()}
 		</div>
 	);
 }

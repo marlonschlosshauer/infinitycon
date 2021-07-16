@@ -1,6 +1,11 @@
 .App {
-    display: grid;
+    display: flex;
     justify-content: center;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    margin: auto;
+    grid-gap: 50px;
 }
 
 .identicon {
